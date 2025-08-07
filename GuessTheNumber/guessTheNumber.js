@@ -13,6 +13,15 @@ let previousGuess = [];
 let numOfGuesses = 0;
 let playGame = true;
 
+
+if (playGame) {
+    submit.addEventListener('click', (e) => {
+        e.preventDefault()
+        const input = parseInt(userInput.value)
+        validateInput(input)
+    })
+}
+
 function validateInput(input){
 
 }
@@ -26,5 +35,13 @@ function displayInput(input){
 }
 
 function showMessage(msg){
+
+}
+
+function endGame(){
+
+}
+
+function newGame(){
 
 }
