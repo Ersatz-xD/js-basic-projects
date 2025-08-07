@@ -13,35 +13,39 @@ let previousGuess = [];
 let numOfGuesses = 0;
 let playGame = true;
 
-
 if (playGame) {
-    submit.addEventListener('click', (e) => {
-        e.preventDefault()
-        const input = parseInt(userInput.value)
-        validateInput(input)
-    })
+  submit.addEventListener("click", (e) => {
+    e.preventDefault();
+    const input = parseInt(userInput.value);
+    validateInput(input);
+  });
 }
 
-function validateInput(input){
-
+function validateInput(input) {
+  if (input === "" || isNaN(input)) {
+    alert("Enter a valid number!");
+  } else if (input < 1 || input > 100) {
+    alert("Enter a number within given range!");
+  } else {
+    previousGuess.push(input);
+    if (numOfGuesses >= 10){
+        displayInput(input)
+        showMessage(`Game Over! The number was ${randNum} xD.`)
+        endGame()
+    }
+    else{
+        displayInput(input)
+        checkInput(input)
+    }
+  }
 }
 
-function validateInput(guess){
+function checkInput(input) {}
 
-}
+function displayInput(input) {}
 
-function displayInput(input){
+function showMessage(msg) {}
 
-}
+function endGame() {}
 
-function showMessage(msg){
-
-}
-
-function endGame(){
-
-}
-
-function newGame(){
-
-}
+function newGame() {}
