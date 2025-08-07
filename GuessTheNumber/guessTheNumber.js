@@ -40,7 +40,15 @@ function validateInput(input) {
   }
 }
 
-function checkInput(input) {}
+function checkInput(input) {
+    if (input > randNum) {
+        showMessage(`Number is High!`)
+    } else if (input < randNum) {
+        showMessage(`Number is low!`)
+    } else if (input === randNum){
+        showMessage(`Correct Guess!`)
+    }
+}
 
 function displayInput(input) {}
 
